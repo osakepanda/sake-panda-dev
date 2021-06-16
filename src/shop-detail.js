@@ -10,7 +10,7 @@ import SEO from "./components/seo"
 import Post from "./components/post"
 
 export const query = graphql`
-  query Index($lang: String) {
+  query ShopDetail($lang: String) {
     prismicIndex(lang: {eq: $lang}) {
       data {
         seo_title
