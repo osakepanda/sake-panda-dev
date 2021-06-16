@@ -9,7 +9,7 @@ module.exports = {
     {
       resolve: `gatsby-source-prismic`,
       options: {
-        repositoryName: `osake-panda`,
+        repositoryName: `sake-panda-dev`,
         accessToken: `${process.env.PRISMIC_KEY}`,
         schemas: {
           index: require('./prismic/index.json')
