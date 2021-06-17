@@ -1,4 +1,4 @@
-import "./shop-detail.css"
+import "./shop.css"
 
 import React from "react"
 import PropTypes from "prop-types"
@@ -10,8 +10,8 @@ import SEO from "./components/seo"
 import Post from "./components/post"
 
 export const query = graphql`
-  query ShopDetail($lang: String) {
-    prismicIndex(lang: {eq: $lang}) {
+  query Shop($lang: String) {
+    prismicShop(lang: {eq: $lang}) {
       data {
         seo_title
         seo_description
@@ -47,18 +47,18 @@ export const query = graphql`
     }
   }`
 
-class ShopDetail extends React.Component {
+class Shop extends React.Component {
   state = { posts: [] }
 
   componentDidMount() {
-    getposts(this.props.data.prismicIndex.data.seo_instagram)
+    getposts(this.props.data.prismicShop.data.seo_instagram)
       .then(posts => this.setState({ posts }))
   }
 
   render() {
     const { lang, data } = this.props
     const { posts } = this.state 
-    const { prismicIndex } = data
+    const { prismicShop } = data
 
     const {
       seo_title,
@@ -72,7 +72,7 @@ class ShopDetail extends React.Component {
       address,
       phone,
       content,
-    } = prismicIndex.data
+    } = prismicShop.data
 
     const meta = [{
       property: 'og:image:width',
@@ -118,12 +118,12 @@ class ShopDetail extends React.Component {
   }
 }
 
-ShopDetail.propTypes = {
+Shop.propTypes = {
   lang: PropTypes.oneOf(['en-us', 'ja-jp']).isRequired,
 }
 
-ShopDetail.defaultProps = {
+Shop.defaultProps = {
   lang: 'ja-jp'
 }
 
-export default ShopDetail
+export default Shop

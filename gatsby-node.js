@@ -9,7 +9,7 @@ const routes = {
 
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions
-  const component = path.resolve(`./src/shop-detail.js`)
+  const component = path.resolve(`./src/shop.js`)
 
   Object.entries(routes).forEach(([path, lang]) => {
     createPage({
