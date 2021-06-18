@@ -11,37 +11,41 @@ import Post from "./components/post"
 
 export const query = graphql`
   query ShopQuery($lang: String) {
-    prismicShop(lang: {eq: $lang}) {
-      data {
-        seo_title
-        seo_description
-        seo_author
-        seo_instagram
-        seo_icon {
-          dimensions {
-            width
-            height
+    allPrismicShop(lang: {eq: $lang}) {
+      edges {
+        node {
+          data {
+            seo_title
+            seo_description
+            seo_author
+            seo_instagram
+            seo_icon {
+              dimensions {
+                width
+                height
+              }
+              url
+            }
+            logo {
+              url
+            }
+            cover {
+              url
+            }
+            baseline {
+              text
+            }
+            opening {
+              text
+            }
+            address {
+              text
+            }
+            phone
+            content {
+              html
+            }
           }
-          url
-        }
-        logo {
-          url
-        }
-        cover {
-          url
-        }
-        baseline {
-          text
-        }
-        opening {
-          text
-        }
-        address {
-          text
-        }
-        phone
-        content {
-          html
         }
       }
     }
@@ -51,14 +55,14 @@ class Shop extends React.Component {
   state = { posts: [] }
 
   componentDidMount() {
-    getposts(this.props.data.prismicShop.data.seo_instagram)
+    getposts(this.props.data.allPrismicShop.data.seo_instagram)
       .then(posts => this.setState({ posts }))
   }
 
   render() {
     const { lang, data } = this.props
     const { posts } = this.state 
-    const { prismicShop } = data
+    const { allPrismicShop } = data
 
     const {
       seo_title,
@@ -72,7 +76,7 @@ class Shop extends React.Component {
       address,
       phone,
       content,
-    } = prismicShop.data
+    } = allPrismicShop.data
 
     const meta = [{
       property: 'og:image:width',
