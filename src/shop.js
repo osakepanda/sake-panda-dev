@@ -11,7 +11,7 @@ import Post from "./components/post"
 
 export const query = graphql`
   query Shop {
-    allPrismicShop {
+    allPrismicShop(filter: {id: {eq: "YMr2mhEAACQA_-3-"}) {
       data {
         seo_title
         seo_description
