@@ -36,7 +36,7 @@ class Index extends React.Component {
     const { allPrismicIndex } = data
 
     const {
-      url1Name
+      url1_name
     } = allPrismicIndex.edges[0].node.data
 
     // const meta = [{
@@ -59,10 +59,10 @@ class Index extends React.Component {
         {/*  meta={meta} />*/}
 
         <header>
-          <picture style={{ backgroundImage: `url(${cover.url})` }}></picture>
+          {/*<picture style={{ backgroundImage: `url(${cover.url})` }}></picture>*/}
           <hgroup>
-            <h1 style={{ backgroundImage: `url(${url1Name.text})` }}>{ seo_title }</h1>
-            {/*<h2>{ baseline.text }</h2>*/}
+            {/*<h1 style={{ backgroundImage: `url(${url1_name.text})` }}>{ url1_name.text }</h1>*/}
+            <h2>{ url1_name.text }</h2>
             {/*<h3><span role="img" aria-label="time">🕖</span>{ opening.text }</h3>*/}
             {/*<address><span role="img" aria-label="location">📍</span>{ address.text }</address>*/}
             {/*<phone><span role="img" aria-label="phone">📞</span><a href={`tel:${phone}`}>{ phone }</a></phone>*/}
