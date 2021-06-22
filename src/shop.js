@@ -1,4 +1,4 @@
-import "./index.css"
+import "./shop.css"
 
 import React from "react"
 import PropTypes from "prop-types"
@@ -51,7 +51,7 @@ export const query = graphql`
     }
   }`
 
-class Index extends React.Component {
+class Shop extends React.Component {
   state = { posts: [] }
 
   componentDidMount() {
@@ -122,12 +122,12 @@ class Index extends React.Component {
   }
 }
 
-Index.propTypes = {
+Shop.propTypes = {
   lang: PropTypes.oneOf(['en-us', 'ja-jp']).isRequired,
 }
 
-Index.defaultProps = {
+Shop.defaultProps = {
   lang: 'ja-jp'
 }
 
-export default Index
+export default Shop
