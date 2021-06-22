@@ -10,8 +10,8 @@ import SEO from "./components/seo"
 import Post from "./components/post"
 
 export const query = graphql`
-  query ShopQuery($lang: String) {
-    allPrismicShop(lang: {eq: $lang}) {
+  query ShopQuery {
+    allPrismicShop(filter: {eq: $lang}) {
       edges {
         node {
           data {
