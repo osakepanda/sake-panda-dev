@@ -1,0 +1,17 @@
+{
+  "Main" : {
+    "url1_name" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label" : "URL1_Name"
+      }
+    },
+    "url1" : {
+      "type" : "Link",
+      "config" : {
+        "label" : "URL1"
+      }
+    }
+  }
+}
