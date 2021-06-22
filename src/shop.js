@@ -55,7 +55,7 @@ class Shop extends React.Component {
   state = { posts: [] }
 
   componentDidMount() {
-    getposts(this.props.data.allPrismicShop.edges[0].node.seo_instagram)
+    getposts(this.props.data.allPrismicShop.edges[0].node.data.seo_instagram)
       .then(posts => this.setState({ posts }))
   }
 
@@ -76,7 +76,7 @@ class Shop extends React.Component {
       address,
       phone,
       content,
-    } = allPrismicShop.edges[0].node
+    } = allPrismicShop.edges[0].node.data
 
     const meta = [{
       property: 'og:image:width',
