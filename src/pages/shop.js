@@ -1,13 +1,13 @@
-import "./shop.css"
+import "../styles/shop.css"
 
 import React from "react"
 import PropTypes from "prop-types"
 
 import { graphql } from "gatsby"
-import getposts from "./instagram"
+import getposts from "../instagram"
 
-import SEO from "./components/seo"
-import Post from "./components/post"
+import SEO from "../components/seo"
+import Post from "../components/post"
 
 export const query = graphql`
   query ShopQuery {
