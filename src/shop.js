@@ -11,7 +11,7 @@ import Post from "./components/post"
 
 export const query = graphql`
   query ShopQuery {
-    allShops(filter: {id: {eq: "YMr2mhEAACQA_-3-"}}) {
+    allPrismicShop {
       edges {
         node {
           seo_title
@@ -53,14 +53,14 @@ class Shop extends React.Component {
   state = { posts: [] }
 
   componentDidMount() {
-    getposts(this.props.data.allShops.data.seo_instagram)
+    getposts(this.props.data.allPrismicShop.edges[0].node.seo_instagram)
       .then(posts => this.setState({ posts }))
   }
 
   render() {
     const { lang, data } = this.props
     const { posts } = this.state 
-    const { allShops } = data
+    const { allPrismicShop } = data
 
     const {
       seo_title,
@@ -74,7 +74,7 @@ class Shop extends React.Component {
       address,
       phone,
       content,
-    } = allShops.data
+    } = allPrismicShop.edges[0].node
 
     const meta = [{
       property: 'og:image:width',
