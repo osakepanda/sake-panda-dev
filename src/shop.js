@@ -11,7 +11,7 @@ import Post from "./components/post"
 
 export const query = graphql`
   query ShopQuery {
-    allPrismicShop(filter: {eq: $lang}) {
+    allPrismicShop(filter: {id: {eq: "YMr2mhEAACQA_-3-"}}) {
       edges {
         node {
           data {
