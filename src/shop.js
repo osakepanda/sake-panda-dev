@@ -14,37 +14,35 @@ export const query = graphql`
     allPrismicShop(filter: {id: {eq: "YMr2mhEAACQA_-3-"}}) {
       edges {
         node {
-          data {
-            seo_title
-            seo_description
-            seo_author
-            seo_instagram
-            seo_icon {
-              dimensions {
-                width
-                height
-              }
-              url
+          seo_title
+          seo_description
+          seo_author
+          seo_instagram
+          seo_icon {
+            dimensions {
+              width
+              height
             }
-            logo {
-              url
-            }
-            cover {
-              url
-            }
-            baseline {
-              text
-            }
-            opening {
-              text
-            }
-            address {
-              text
-            }
-            phone
-            content {
-              html
-            }
+            url
+          }
+          logo {
+            url
+          }
+          cover {
+            url
+          }
+          baseline {
+            text
+          }
+          opening {
+            text
+          }
+          address {
+            text
+          }
+          phone
+          content {
+            html
           }
         }
       }
