@@ -26,8 +26,8 @@ class Index extends React.Component {
   state = { posts: [] }
 
   componentDidMount() {
-    getposts(this.props.data.allPrismicIndex.edges[0].node.data.seo_instagram)
-      .then(posts => this.setState({ posts }))
+    // getposts(this.props.data.allPrismicIndex.edges[0].node.data.seo_instagram)
+    //   .then(posts => this.setState({ posts }))
   }
 
   render() {
