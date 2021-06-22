@@ -18,32 +18,14 @@ export const query = graphql`
           seo_description
           seo_author
           seo_instagram
-          seo_icon {
-            dimensions {
-              width
-              height
-            }
-            url
-          }
-          logo {
-            url
-          }
-          cover {
-            url
-          }
-          baseline {
-            text
-          }
-          opening {
-            text
-          }
-          address {
-            text
-          }
+          seo_icon 
+          logo
+          cover
+          baseline
+          opening
+          address
           phone
-          content {
-            html
-          }
+          content
         }
       }
     }
