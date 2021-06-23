@@ -1,44 +1,29 @@
-import "../styles/shop.css"
+import React from "react";
+import { Link } from "gatsby";
+import Layout from "../components/layout";
+import Image from "../components/image";
+import SEO from "../components/seo";
+//import "./index.css";
 
-import React from "react"
-import PropTypes from "prop-types"
+const IndexPage = () => (
+    <Layout>
+      <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+      <div className="home">
+        <h1>Hello There</h1>
+        <p>Welcome my awesome blog</p>
+        <div>
+          <div
+              style={{
+                maxWidth: `300px`,
+                margin: "0 auto 1.45rem"
+              }}
+          >
+            <Image />
+          </div>
+        </div>
+        <Link to="/posts/">View all posts</Link>
+      </div>
+    </Layout>
+);
 
-import { graphql } from "gatsby"
-import getposts from "../instagram"
-
-import SEO from "../components/seo"
-import Post from "../components/post"
-
-export const query = graphql`
-  query IndexQuery($uid: String) {
-    prismicIndex(uid: {eq: $uid}) {
-      data {
-        url1_title {
-          text
-          raw
-        }
-      }
-    }
-  }`
-
-class Index extends React.Component {
-  state = { posts: [] }
-
-  render() {
-    const { lang, data } = this.props
-    const { posts } = this.state 
-    const { prismicIndex } = data
-
-    return <h1>prismicIndex.data.url1_title[0].text</h1>
-  }
-}
-
-Index.propTypes = {
-  lang: PropTypes.oneOf(['en-us', 'ja-jp']).isRequired,
-}
-
-Index.defaultProps = {
-  lang: 'ja-jp'
-}
-
-export default Index
+export default IndexPage;
