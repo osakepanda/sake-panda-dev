@@ -1,5 +1,3 @@
-import "../styles/shop.css"
-
 import React from "react"
 import PropTypes from "prop-types"
 
@@ -10,43 +8,39 @@ import SEO from "../components/seo"
 import Post from "../components/post"
 
 export const query = graphql`
-  query ShopQuery {
-    allPrismicShop {
-      edges {
-        node {
-          data {
-            seo_title
-            seo_description
-            seo_author
-            seo_instagram
-            seo_icon {
-              dimensions {
-                width
-                height
-              }
-              url
-            }
-            logo {
-              url
-            }
-            cover {
-              url
-            }
-            baseline {
-              text
-            }
-            opening {
-              text
-            }
-            address {
-              text
-            }
-            phone
-            content {
-              html
-            }          
+  query ShopQuery($uid: String, $lang: String) {
+    prismicShop(uid: {eq: $uid}) {
+      data {
+        seo_title
+        seo_description
+        seo_author
+        seo_instagram
+        seo_icon {
+          dimensions {
+            width
+            height
           }
+          url
         }
+        logo {
+          url
+        }
+        cover {
+          url
+        }
+        baseline {
+          text
+        }
+        opening {
+          text
+        }
+        address {
+          text
+        }
+        phone
+        content {
+          html
+        }          
       }
     }
   }`
@@ -55,14 +49,14 @@ class Shop extends React.Component {
   state = { posts: [] }
 
   componentDidMount() {
-    getposts(this.props.data.allPrismicShop.edges[0].node.data.seo_instagram)
+    getposts(this.props.data.prismicShop.data.seo_instagram)
       .then(posts => this.setState({ posts }))
   }
 
   render() {
     const { lang, data } = this.props
     const { posts } = this.state 
-    const { allPrismicShop } = data
+    const { prismicShop } = data
 
     const {
       seo_title,
@@ -76,7 +70,7 @@ class Shop extends React.Component {
       address,
       phone,
       content,
-    } = allPrismicShop.edges[0].node.data
+    } = prismicShop.data
 
     const meta = [{
       property: 'og:image:width',
@@ -108,7 +102,7 @@ class Shop extends React.Component {
           </hgroup>
         </header>
 
-        {/*<section dangerouslySetInnerHTML={{ __html: content.html }}></section>*/}
+        <section dangerouslySetInnerHTML={{ __html: content.html }}></section>
 
         <aside>
           { posts.map((post, index) => <Post key={index} {...post}  />) }

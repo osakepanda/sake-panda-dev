@@ -10,16 +10,12 @@ import SEO from "../components/seo"
 import Post from "../components/post"
 
 export const query = graphql`
-  query IndexQuery {
-    allPrismicIndex {
-      edges {
-        node {
-          data {
-            url1_title {
-              text
-              raw
-            }
-          }
+  query IndexQuery($uid: String, $lang: String) {
+    prismicIndex(uid: {eq: $uid}) {
+      data {
+        url1_title {
+          text
+          raw
         }
       }
     }
@@ -28,17 +24,12 @@ export const query = graphql`
 class Index extends React.Component {
   state = { posts: [] }
 
-  componentDidMount() {
-    // getposts(this.props.data.allPrismicIndex.edges[0].node.data.seo_instagram)
-    //   .then(posts => this.setState({ posts }))
-  }
-
   render() {
     const { lang, data } = this.props
     const { posts } = this.state 
-    const { allPrismicIndex } = data
+    const { prismicIndex } = data
 
-    return <h1>allPrismicIndex.edges[0].node.data.url1_title[0].text</h1>
+    return <h1>prismicIndex.data.url1_title[0].text</h1>
   }
 }
 

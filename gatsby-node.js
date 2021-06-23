@@ -9,11 +9,30 @@ const routes = {
 
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions
-  const component = path.resolve(`./src/pages/index.js`)
-
-  Object.entries(routes).forEach(([path, lang]) => {
+  const pageData = [
+    {
+      pageName: "sakepanda",
+      component: path.resolve(`./src/pages/shop.js`),
+      contents: "ダミー作成",
+    },
+    {
+      pageName: "sakepanda",
+      component: path.resolve(`./src/pages/index.js`),
+      contents: "ダミー作成",
+    }
+  ]
+  pageData.forEach(data => {
     createPage({
-      path, component, context: { lang },
+      path: pageData.pageName,
+      component: pageData.component,
+      context: { data },
     })
   })
+  // Object.entries(routes).forEach(([path, lang]) => {
+  //   createPage({
+  //     path: pageData.pageName,
+  //     component: pageData.component,
+  //     context: { lang },
+  //   })
+  // })
 }
