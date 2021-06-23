@@ -12,8 +12,7 @@ module.exports = {
         repositoryName: `sake-panda-dev`,
         accessToken: `${process.env.PRISMIC_KEY}`,
         schemas: {
-          index: require('./prismic/index.json'),
-          shop: require('./prismic/shop.json')
+          index: require('./prismic/index.json')
         }
       },
     },
