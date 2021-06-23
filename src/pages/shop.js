@@ -108,7 +108,7 @@ class Shop extends React.Component {
           </hgroup>
         </header>
 
-        <section dangerouslySetInnerHTML={{ __html: content.html }}></section>
+        {/*<section dangerouslySetInnerHTML={{ __html: content.html }}></section>*/}
 
         <aside>
           { posts.map((post, index) => <Post key={index} {...post}  />) }
