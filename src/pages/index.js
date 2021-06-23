@@ -15,7 +15,7 @@ export const query = graphql`
       edges {
         node {
           data {
-            url1_name
+            url1_title
           }
         }
       }
