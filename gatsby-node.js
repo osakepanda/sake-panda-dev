@@ -11,13 +11,13 @@ exports.createPages = async ({ actions }) => {
   const { createPage } = actions
   const pageData = [
     {
-      pageName: "sakepanda",
-      component: path.resolve(`./src/pages/shop.js`),
+      pageName: "index-page",
+      component: path.resolve(`./src/pages/index.js`),
       contents: "ダミー作成",
     },
     {
-      pageName: "index-page",
-      component: path.resolve(`./src/pages/index.js`),
+      pageName: "sakepanda",
+      component: path.resolve(`./src/pages/shop.js`),
       contents: "ダミー作成",
     }
   ]
