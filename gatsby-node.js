@@ -16,15 +16,15 @@ exports.createPages = async ({ actions }) => {
       contents: "ダミー作成",
     },
     {
-      pageName: "sakepanda",
+      pageName: "index-page",
       component: path.resolve(`./src/pages/index.js`),
       contents: "ダミー作成",
     }
   ]
   pageData.forEach(data => {
     createPage({
-      path: pageData.pageName,
-      component: pageData.component,
+      path: `/${data.pageName}`,
+      component: data.component,
       context: { data },
     })
   })
