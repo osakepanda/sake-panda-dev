@@ -62,7 +62,7 @@ class Index extends React.Component {
           {/*<picture style={{ backgroundImage: `url(${cover.url})` }}></picture>*/}
           <hgroup>
             {/*<h1 style={{ backgroundImage: `url(${url1_name.text})` }}>{ url1_name.text }</h1>*/}
-            <h2>{ url1_name.text }</h2>
+            <h2>{ url1_name[0].text }</h2>
             {/*<h3><span role="img" aria-label="time">🕖</span>{ opening.text }</h3>*/}
             {/*<address><span role="img" aria-label="location">📍</span>{ address.text }</address>*/}
             {/*<phone><span role="img" aria-label="phone">📞</span><a href={`tel:${phone}`}>{ phone }</a></phone>*/}
