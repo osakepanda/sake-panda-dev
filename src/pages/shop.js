@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 import Post from "../components/post"
 
 export const query = graphql`
-  query ShopQuery($uid: String, $lang: String) {
+  query ShopQuery($uid: String) {
     prismicShop(uid: {eq: $uid}) {
       data {
         seo_title

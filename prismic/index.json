@@ -6,17 +6,18 @@
         "label" : "UID"
       }
     },
-    "url1_name" : {
+    "url1_title" : {
       "type" : "StructuredText",
       "config" : {
         "single" : "heading1,heading2,heading3,heading4,heading5,heading6",
-        "label" : "URL1_Name"
+        "label" : "url1_title"
       }
     },
     "url1" : {
       "type" : "Link",
       "config" : {
-        "label" : "URL1"
+        "label" : "URL1",
+        "select" : null
       }
     }
   }

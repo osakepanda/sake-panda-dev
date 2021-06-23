@@ -10,7 +10,7 @@ import SEO from "../components/seo"
 import Post from "../components/post"
 
 export const query = graphql`
-  query IndexQuery($uid: String, $lang: String) {
+  query IndexQuery($uid: String) {
     prismicIndex(uid: {eq: $uid}) {
       data {
         url1_title {
