@@ -15,7 +15,10 @@ export const query = graphql`
       edges {
         node {
           data {
-            url1_title
+            url1_title {
+              text
+              raw
+            }
           }
         }
       }
@@ -34,7 +37,7 @@ class Index extends React.Component {
     const { lang, data } = this.props
     const { posts } = this.state 
     const { allPrismicIndex } = data
-    
+
     return <h1>allPrismicIndex.edges[0].node.data.url1_title[0].text</h1>
   }
 }
