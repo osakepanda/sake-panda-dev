@@ -17,7 +17,7 @@ exports.createPages = async ({ actions }) => {
     },
     {
       pageName: "sakepanda",
-      component: path.resolve(`./src/pages/shop.js`),
+      component: path.resolve(`./src/pages/sakepanda.js`),
       contents: "ダミー作成",
     }
   ]

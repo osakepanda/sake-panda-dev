@@ -45,7 +45,7 @@ export const query = graphql`
     }
   }`
 
-class Shop extends React.Component {
+class Sakepanda extends React.Component {
   state = { posts: [] }
 
   componentDidMount() {
@@ -116,12 +116,12 @@ class Shop extends React.Component {
   }
 }
 
-Shop.propTypes = {
+Sakepanda.propTypes = {
   lang: PropTypes.oneOf(['en-us', 'ja-jp']).isRequired,
 }
 
-Shop.defaultProps = {
+Sakepanda.defaultProps = {
   lang: 'ja-jp'
 }
 
-export default Shop
+export default Sakepanda
