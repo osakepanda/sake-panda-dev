@@ -34,11 +34,8 @@ class Index extends React.Component {
     const { lang, data } = this.props
     const { posts } = this.state 
     const { allPrismicIndex } = data
-
-    const {
-      url1_title
-    } = allPrismicIndex.edges[0].node.data
-    return <h1>Hello, World!</h1>
+    
+    return <h1>allPrismicIndex.edges[0].node.data.url1_title[0].text</h1>
   }
 }
 
