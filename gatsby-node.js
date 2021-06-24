@@ -9,7 +9,7 @@ const routes = {
 
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions
-  const component = path.resolve(`./src/pages/sakepanda.js`)
+  const component = path.resolve(`./src/pages/index.js`)
   const pageData = [
     // {
     //   pageName: "index-page",
@@ -25,7 +25,7 @@ exports.createPages = async ({ actions }) => {
 
   Object.entries(routes).forEach(([path, lang]) => {
     createPage({
-      path: "/sakepanda/",
+      path: "/",
       component: component,
       context: { lang },
     })
