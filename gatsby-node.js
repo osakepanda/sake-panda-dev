@@ -9,14 +9,14 @@ const routes = {
 
 exports.createPages = async ({ actions }) => {
   const { createPage } = actions
-  const component1 = path.resolve(`./src/pages/index.js`)
+  const component1 = path.resolve(`./src/pages/top.js`)
   const component2 = path.resolve(`./src/pages/sakepanda.js`)
   const pageData = [
-    // {
-    //   pageName: "index-page",
-    //   component: path.resolve(`./src/pages/index.js`),
-    //   contents: "ダミー作成",
-    // },
+    {
+      pageName: "top",
+      component: path.resolve(`./src/pages/top.js`),
+      contents: "ダミー作成",
+    },
     {
       pageName: "sakepanda",
       component: path.resolve(`./src/pages/sakepanda.js`),
@@ -24,16 +24,24 @@ exports.createPages = async ({ actions }) => {
     }
   ]
 
-  Object.entries(routes).forEach(([path, lang]) => {
+  pageData.forEach(data => {
     createPage({
-      path: "/",
-      component: component1,
-      context: { lang },
-    })
-    createPage({
-      path: "/sakepanda/",
-      component: component2,
-      context: { lang },
+      path: `/${data.pageName}`,
+      component: data.component,
+      context: 'ja-jp'
     })
   })
+
+  // Object.entries(routes).forEach(([path, lang]) => {
+  //   createPage({
+  //     path: "/top/",
+  //     component: component1,
+  //     context: { lang },
+  //   })
+  //   createPage({
+  //     path: "/sakepanda/",
+  //     component: component2,
+  //     context: { lang },
+  //   })
+  // })
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 //import "./index.css";
-const IndexPage = () => (
+const TopPage = () => (
     <div style={{ color: `purple` }}>
       <Link to="/sakepanda/">Contact</Link>
       <p>What a world.</p>
@@ -9,4 +9,4 @@ const IndexPage = () => (
     </div>
 );
 
-export default IndexPage;
+export default TopPage;
