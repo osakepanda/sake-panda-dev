@@ -5,24 +5,34 @@ on:
     types: [prismic_release_dev]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      PRISMIC_KEY: ${{ secrets.PRISMIC_KEY }}
-
+  deploy:
+    runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 14
+      - uses: actions/checkout@v2
 
-      - run: npm install
-      - run: npm run clean
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - run: npm ci
+      - run: npm run format
+      - run: npm run test
       - run: npm run build
-      - uses: peaceiris/actions-gh-pages@v3
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           user_name: 'buildbotdev'
           user_email: 'yonayona.kyoto@gmail.com'
           publish_dir: ./public
-          allow_empty_commit: true
