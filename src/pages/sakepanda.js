@@ -1,3 +1,5 @@
+import "../styles/shop.css"
+
 import React from "react"
 import PropTypes from "prop-types"
 
