@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{ciRD:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),c=a.n(n),r=a("Wbzz");t.default=function(){return c.a.createElement("div",{style:{color:"purple"}},c.a.createElement(r.a,{to:"/sakepanda/"},"Contact"),c.a.createElement("p",null,"What a world."),c.a.createElement("img",{src:"https://source.unsplash.com/random/400x200",alt:""}))}}}]);
+//# sourceMappingURL=component---src-pages-top-js-237ea95bceedb66d2b08.js.map

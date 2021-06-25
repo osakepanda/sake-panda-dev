@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{RXBc:function(e,a,t){"use strict";t.r(a);var n=t("q1tI"),r=t.n(n),l=t("Wbzz");a.default=function(){return r.a.createElement("div",{style:{color:"purple"}},r.a.createElement(l.a,{to:"/sakepanda/"},"Sakepanda"),r.a.createElement("br",null),r.a.createElement(l.a,{to:"/top/"},"Top"),r.a.createElement("p",null,"What a world."),r.a.createElement("img",{src:"https://source.unsplash.com/random/400x200",alt:""}))}}}]);
+//# sourceMappingURL=component---src-pages-index-js-125983bbfeaf4ce6513a.js.map
