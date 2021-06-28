@@ -19,7 +19,3 @@ module.exports = {
     },
   ],
 }
-
-module.exports = {
-  pathPrefix: "/sake-panda-dev",
-}
