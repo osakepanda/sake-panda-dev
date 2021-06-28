@@ -29,13 +29,14 @@ jobs:
       - run: npm ci
       - run: npm run format
       - run: npm run build
+      - run: npm run deploy
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          user_name: 'buildbot'
-          user_email: 'yonayona.kyoto@gmail.com'
-          publish_dir: ./public
-          allow_empty_commit: true
+#      - name: Deploy
+#        uses: peaceiris/actions-gh-pages@v3
+#        if: github.ref == 'refs/heads/main'
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          user_name: 'buildbot'
+#          user_email: 'yonayona.kyoto@gmail.com'
+#          publish_dir: ./public
+#          allow_empty_commit: true
